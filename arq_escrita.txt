@@ -1,0 +1,6 @@
+Método         Raiz Aproximada     Iterações      
+Bissecao       1.447414            25             
+MIL            1.447414            16             
+Newton         1.447414            10             
+Secante        1.449703            5              
+Regula Falsi   1.447414            1              
