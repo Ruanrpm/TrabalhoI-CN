@@ -1,77 +1,72 @@
-🔢 Métodos Numéricos para Aproximação de Raízes
+# 🔢 Métodos Numéricos para Aproximação de Raízes  
 
-Este projeto implementa em Python quatro métodos numéricos clássicos utilizados para encontrar raízes de funções reais. Ele permite calcular aproximações sucessivas até atingir uma precisão definida, salvando os resultados em um arquivo .txt em formato tabular.
+Este projeto implementa em **Python** quatro métodos numéricos clássicos utilizados para **encontrar raízes de funções** reais. Ele permite calcular aproximações sucessivas até atingir uma precisão definida, salvando os resultados em um arquivo `.txt` em formato tabular.  
 
-📘 Métodos Implementados
+---
 
-Método da Bisseção
-Baseia-se na divisão sucessiva de um intervalo onde ocorre mudança de sinal da função até que o tamanho do intervalo seja suficientemente pequeno.
+## 📘 Métodos Implementados
 
-Garantia de convergência.
+1. **Método da Bisseção**  
+   Baseia-se na divisão sucessiva de um intervalo onde ocorre mudança de sinal da função até que o tamanho do intervalo seja suficientemente pequeno.  
+   - Garantia de convergência.  
+   - Mais lento, mas estável.  
 
-Mais lento, mas estável.
+2. **Método da Falsa Posição (Regula Falsi)**  
+   Combina as ideias da bisseção com uma aproximação linear da função.  
+   - Mais rápido que a bisseção.  
+   - Pode convergir lentamente em alguns casos.  
 
-Método da Falsa Posição (Regula Falsi)
-Combina as ideias da bisseção com uma aproximação linear da função.
+3. **Método da Secante**  
+   Usa duas aproximações iniciais e constrói uma reta secante entre os pontos para estimar a raiz.  
+   - Não requer derivada.  
+   - Convergência mais rápida, mas depende de boas aproximações iniciais.  
 
-Mais rápido que a bisseção.
+4. **Método de Newton-Raphson**  
+   Utiliza a derivada da função para encontrar a raiz de forma iterativa.  
+   - Convergência quadrática.  
+   - Requer cálculo da derivada e uma boa aproximação inicial.  
 
-Pode convergir lentamente em alguns casos.
-
-Método da Secante
-Usa duas aproximações iniciais e constrói uma reta secante entre os pontos para estimar a raiz.
-
-Não requer derivada.
-
-Convergência mais rápida, mas depende de boas aproximações iniciais.
-
-Método de Newton-Raphson
-Utiliza a derivada da função para encontrar a raiz de forma iterativa.
-
-Convergência quadrática.
-
-Requer cálculo da derivada e uma boa aproximação inicial.
-
-⚙️ Estrutura do Projeto
-├── main.py                # Arquivo principal de execução
-├── arq_leitura.txt
-├── arq_escrita.txt        
+---
 
 
-🧩 Como Funciona
+## ⚙️ Estrutura do Projeto
 
-O usuário fornece:
+├── main.py # Arquivo principal de execução
 
-A função f(x)
+├── arq_leitura.txt # Arquivo de entrada
 
-(Opcional) A derivada f'(x)
+├── arq_escrita.txt # Arquivo de saída com resultados formatados em colunas
 
-O intervalo [a, b]
 
-A precisão desejada
 
-O número máximo de iterações
+---
 
-O programa aplica os métodos e salva os resultados no arquivo arq_escrita.txt com o formato:
+## 🧩 Como Funciona
 
-Método          Raiz Aproximada      Iterações
------------------------------------------------
-Bisseção        1.442693             13
-Regula Falsi    1.442698             9
-Secante         1.442695             5
-Newton          1.442695             4
+1. O usuário fornece:  
+   - A função `f(x)`  
+   - (Opcional) `p(x)`  
+   - O intervalo `[a, b]`  
+   - A precisão desejada  
+   - O número máximo de iterações  
 
-🧮 Exemplo de Uso
+2. O programa aplica os métodos e salva os resultados no arquivo `arq_escrita.txt`
+
+
+
+---
+
+## 🧮 Exemplo de Uso
 
 Entrada:
-
+```python
 f(x) = exp(-x**2) - cos(x)
-Intervalo: [1, 3]
+Intervalo:
+1
+3
 Precisão: 0.0000001
 Iterações máximas: 100
 
-
-Saída (arq_escrita.txt):
 
 Método          Raiz Aproximada      Iterações
 -----------------------------------------------
@@ -80,27 +75,39 @@ Regula Falsi    1.436756             10
 Secante         1.436757             5
 Newton          1.436756             4
 
-🧠 Conceitos Utilizados
+```
 
-Aproximações sucessivas de raízes reais.
 
-Critérios de parada por erro absoluto.
+---
+## 🧠 Conceitos Utilizados
 
-Recursão e controle de iterações.
+  - Aproximações sucessivas de raízes reais.
 
-Escrita e formatação de arquivos em Python.
+  - Critérios de parada por erro absoluto.
 
-🧰 Tecnologias Utilizadas
+  - Recursão e controle de iterações.
 
-Python 3.x
+  - Escrita e formatação de arquivos em Python.
+  
+---
 
-Bibliotecas padrão: math, io, os
+## 🧰 Tecnologias Utilizadas
 
-📄 Licença
+  - Python 
 
-Este projeto é de uso livre para fins educacionais e acadêmicos.
+  - Bibliotecas padrão: math, sympy
 
-👨‍💻 Autor
+
+---
+
+## 📄 Licença
+
+  - Este projeto é de uso livre para fins educacionais e acadêmicos.
+
+
+---
+
+## 👨‍💻 Autor
 
 Desenvolvido por Ruan Pablo — estudante de Ciência da Computação.
 Sinta-se à vontade para contribuir ou deixar sugestões! 🚀
