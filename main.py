@@ -8,30 +8,24 @@ def cria_funct():
         linhas = [linha.strip() for linha in arquivo.readlines() if linha.strip()]
 
     functFdx = linhas[0]
-    functPdx = linhas[1]
-    parametros = [float(v) for v in linhas[2:]]
+    parametros = [float(v) for v in linhas[1:]]
 
     def FdeX(x):
-        return eval(functFdx, {
-            "x": x,
-            "exp": math.exp,
-            "cos": math.cos,
-            "sin": math.sin,
-            "tan": math.tan,
-            "log": math.log,
-            "sqrt": math.sqrt
-        })
+        try:
+            return eval(functFdx, {
+                "x": x,
+                "exp": math.exp,
+                "cos": math.cos,
+                "sin": math.sin,
+                "tan": math.tan,
+                "log": math.log,
+                "sqrt": math.sqrt
+            })
+        except OverflowError:
+            return float('inf') 
     
     def PdeX(x):
-        return eval(functPdx, {
-            "x": x,
-            "exp": math.exp,
-            "cos": math.cos,
-            "sin": math.sin,
-            "tan": math.tan,
-            "log": math.log,
-            "sqrt": math.sqrt
-        })
+        return x - FdeX(x)
     
     x = sp.symbols('x')
     exprF = sp.sympify(functFdx, locals={
@@ -51,7 +45,6 @@ def cria_funct():
     return FdeX, dFdeX, PdeX, parametros
 
 FdeX, dFdeX, PdeX, prmt = cria_funct()
-
 # Metodo da Bissecção
 
 def bissecao(i , p, it):
@@ -88,9 +81,9 @@ def Mil(x0, p, it, k=1):
 
     if(abs(FdeX(xn)) < p or abs(xn - x0) < p or k >= it):
         with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
-            arquivo.write(f"{'MIL':<15}{x0:<20f}{k:<15}\n")
+            arquivo.write(f"{'MIL':<15}{xn:<20f}{k:<15}\n")
         return
-    
+        
     Mil(xn, p, it, k+1)
 
 # Metodo de Newton
@@ -122,14 +115,13 @@ def newton(x0, p, it):
         raiz = x0
 
     with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
-            arquivo.write(f"{'Newton':<15}{abs(raiz):<20f}{k:<15}\n")
+            arquivo.write(f"{'Newton':<15}{raiz:<20f}{k:<15}\n")
 
 # Metodo da secante
 
 def secante(x0, x1, p, it, k=1):
     if(abs(FdeX(x0)) < p):
-        with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
-            arquivo.write(f"A raiz aproximada é: {x0}\n O numero de iterações foi: {k}")
+        with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo: 
             arquivo.write(f"{'Secante':<15}{x0:<20f}{k:<15}\n")
         return
     
@@ -153,20 +145,20 @@ def r_falsi(i, p1, p2, it, k=1):
     if(abs(i[1]-i[0]) < p1):
         with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
             arquivo.write(f"{'Regula Falsi':<15}{(i[0]+i[1])/2:<20f}{k:<15}\n")
-        return
+        return 
     
     if(abs(FdeX(i[0])) < p2 or abs(FdeX(i[1])) < p2):
         with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
             arquivo.write(f"{'Regula Falsi':<15}{i[0]:<20f}{k:<15}\n")
-        return
+        return 
     
     m = FdeX(i[0])
-    x = (i[0]*FdeX(i[1]) - i[1]*FdeX(i[0])) / (FdeX(i[1]) - FdeX(i[0]))
+    x = (i[0]*FdeX(i[1]) - i[1]*m) / (FdeX(i[1]) - m)
 
     if(abs(FdeX(x)) < p2 or k > it):
         with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
             arquivo.write(f"{'Regula Falsi':<15}{x:<20f}{k:<15}\n")
-        return
+        return 
     
     if(m*FdeX(x) > 0):
         i[0] = x
@@ -176,11 +168,15 @@ def r_falsi(i, p1, p2, it, k=1):
     if(abs(i[1] - i[0]) < p1):
         with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
             arquivo.write(f"{'Regula Falsi':<15}{i[1]:<20f}{k:<15}\n")
-        return
-    r_falsi(i[:], p1, p2, it, k+1)
+        return 
+    
+    r_falsi(i, p1, p2, it, k+1)
+
+
 
 def main():
     intervalo = [prmt[0], prmt[1]]
+
     with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
         arquivo.write(f"{'Método':<15}{'Raiz Aproximada':<20}{'Iterações':<15}\n")
 
@@ -189,7 +185,7 @@ def main():
     Mil(prmt[1], prmt[2], prmt[3])
     newton(prmt[0], prmt[2], prmt[3])
     secante(prmt[0], prmt[1], prmt[2], prmt[3])
-    r_falsi(intervalo, prmt[2], prmt[2], int(prmt[3]))
+    r_falsi(intervalo, prmt[2], prmt[2], prmt[3])
 
 if __name__ == "__main__":
     main()
