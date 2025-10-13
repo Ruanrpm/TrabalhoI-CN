@@ -1,6 +1,6 @@
 Método         Raiz Aproximada     Iterações      
-Bissecao       1.248392            24             
+Bissecao       1.248392            25             
 MIL            nan                 100            
 Newton         1.248392            29             
-Secante        1.248378            9              
+Secante        1.248318            61             
 Regula Falsi   1.248392            1              

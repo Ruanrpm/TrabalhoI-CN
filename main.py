@@ -141,36 +141,39 @@ def secante(x0, x1, p, it, k=1):
 
 # Metodo regula falsi
 
-def r_falsi(i, p1, p2, it, k=1):
-    if(abs(i[1]-i[0]) < p1):
-        with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
-            arquivo.write(f"{'Regula Falsi':<15}{(i[0]+i[1])/2:<20f}{k:<15}\n")
-        return 
-    
-    if(abs(FdeX(i[0])) < p2 or abs(FdeX(i[1])) < p2):
-        with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
-            arquivo.write(f"{'Regula Falsi':<15}{i[0]:<20f}{k:<15}\n")
-        return 
-    
-    m = FdeX(i[0])
-    x = (i[0]*FdeX(i[1]) - i[1]*m) / (FdeX(i[1]) - m)
+def r_falsi(i, p1, p2, it):
+    k = 1
+    while (True):
 
-    if(abs(FdeX(x)) < p2 or k > it):
-        with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
-            arquivo.write(f"{'Regula Falsi':<15}{x:<20f}{k:<15}\n")
-        return 
-    
-    if(m*FdeX(x) > 0):
-        i[0] = x
-    else:
-        i[1] = x
-    
-    if(abs(i[1] - i[0]) < p1):
-        with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
-            arquivo.write(f"{'Regula Falsi':<15}{i[1]:<20f}{k:<15}\n")
-        return 
-    
-    r_falsi(i, p1, p2, it, k+1)
+        if(abs(i[0] - i[1]) < p1):
+            with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
+                arquivo.write(f"{'Regula Falsi':<15}{i[1]:<20f}{k:<15}\n")
+            return 
+
+        if(abs(FdeX(i[0])) < p2 or abs(FdeX(i[1])) < p2):
+            with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
+                arquivo.write(f"{'Regula Falsi':<15}{i[0]:<20f}{k:<15}\n")
+            return 
+
+        m = FdeX(i[0])
+        x = (i[0]*FdeX(i[1]) - i[1]*m) / (FdeX(i[1]) - m)
+        
+        if(abs(FdeX(x)) < p2 or k > it):
+            with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
+                arquivo.write(f"{'Regula Falsi':<15}{x:<20f}{k:<15}\n")
+            return
+         
+        if(m*FdeX(x) > 0):
+            i[0] = x
+        else:
+            i[1] = x
+
+        if(abs(i[1] - i[0]) < p1):
+            with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
+                arquivo.write(f"{'Regula Falsi':<15}{((i[1]+i[0])/2):<20f}{k:<15}\n")
+            return 
+        
+        k = k + 1
 
 
 
