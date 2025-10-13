@@ -2,10 +2,10 @@ import math
 import sympy as sp
 
 resultados = {
+    "Secante": [],
+    "Newton": [],
     "Bissecao": [],
     "MIL": [],
-    "Newton": [],
-    "Secante": [],
     "Regula Falsi": []
 }
 
@@ -14,11 +14,9 @@ def escrever_resultados():
     max_iters = max(len(v) for v in resultados.values())
 
     with open("arq_escrita.txt", "a", encoding="utf-8") as arq:
-        # Cabeçalho
         arq.write("Método:       " + "".join(f"{m:<20}" for m in metodos) + "\n")
 
         for i in range(max_iters):
-            # Raízes
             linha_raiz = "Raiz:         "
             linha_it = "Iteração:     "
             for m in metodos:
