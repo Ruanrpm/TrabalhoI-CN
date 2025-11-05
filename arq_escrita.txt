@@ -1,191 +1,86 @@
 Método         Raiz Aproximada     Iterações      
-Secante        1.248318            61             
-Newton         1.248392            29             
-Bissecao       1.248392            25             
+Secante        -1.415475           13             
+Newton         -1.415475           7              
+Bissecao       1.248392            26             
 MIL            Inf                 1              
 Regula Falsi   1.248392            1              
 
 Método:       Secante             Newton              Bissecao            MIL                 Regula Falsi        
-Raiz:         1.089931            4.900000            1.000000            Inf                 1.248392            
+Raiz:         1.001057            -1.752147           1.000000            Inf                 1.248392            
 Iteração:     1                   1                   1                   1                   1                   
 
-Raiz:         0.258524            4.797959            1.500000                                                    
+Raiz:         -0.996828           -1.567020           2.000000                                                    
 Iteração:     2                   2                   2                                                           
 
-Raiz:         1.796480            4.693748            1.250000                                                    
+Raiz:         -1.486103           -1.451993           1.500000                                                    
 Iteração:     3                   3                   3                                                           
 
-Raiz:         1.796645            4.587224            1.125000                                                    
+Raiz:         -1.531904           -1.417857           1.250000                                                    
 Iteração:     4                   4                   4                                                           
 
-Raiz:         0.337682            4.478225            1.187500                                                    
+Raiz:         -1.124691           -1.415485           1.125000                                                    
 Iteração:     5                   5                   5                                                           
 
-Raiz:         1.630222            4.366574            1.218750                                                    
+Raiz:         -1.398326           -1.415475           1.187500                                                    
 Iteração:     6                   6                   6                                                           
 
-Raiz:         1.631367            4.252068            1.234375                                                    
-Iteração:     7                   7                   7                                                           
+Raiz:         -1.475327                               1.218750                                                    
+Iteração:     7                                       7                                                           
 
-Raiz:         0.341280            4.134478            1.242188                                                    
-Iteração:     8                   8                   8                                                           
+Raiz:         -1.347216                               1.234375                                                    
+Iteração:     8                                       8                                                           
 
-Raiz:         1.625244            4.013543            1.246094                                                    
-Iteração:     9                   9                   9                                                           
+Raiz:         -1.400632                               1.242188                                                    
+Iteração:     9                                       9                                                           
 
-Raiz:         1.626479            3.888965            1.248047                                                    
-Iteração:     10                  10                  10                                                          
+Raiz:         -1.418903                               1.246094                                                    
+Iteração:     10                                      10                                                          
 
-Raiz:         0.346126            3.760396            1.249023                                                    
-Iteração:     11                  11                  11                                                          
+Raiz:         -1.415214                               1.248047                                                    
+Iteração:     11                                      11                                                          
 
-Raiz:         1.618001            3.627432            1.248535                                                    
-Iteração:     12                  12                  12                                                          
+Raiz:         -1.415471                               1.249023                                                    
+Iteração:     12                                      12                                                          
 
-Raiz:         1.619367            3.489594            1.248291                                                    
-Iteração:     13                  13                  13                                                          
+Raiz:         -1.415475                               1.248535                                                    
+Iteração:     13                                      13                                                          
 
-Raiz:         0.351455            3.346313            1.248413                                                    
-Iteração:     14                  14                  14                                                          
+Raiz:                                                 1.248291                                                    
+Iteração:                                             14                                                          
 
-Raiz:         1.610145            3.196900            1.248352                                                    
-Iteração:     15                  15                  15                                                          
+Raiz:                                                 1.248413                                                    
+Iteração:                                             15                                                          
 
-Raiz:         1.611669            3.040516            1.248383                                                    
-Iteração:     16                  16                  16                                                          
+Raiz:                                                 1.248352                                                    
+Iteração:                                             16                                                          
 
-Raiz:         0.357387            2.876120            1.248398                                                    
-Iteração:     17                  17                  17                                                          
+Raiz:                                                 1.248383                                                    
+Iteração:                                             17                                                          
 
-Raiz:         1.601519            2.702421            1.248390                                                    
-Iteração:     18                  18                  18                                                          
+Raiz:                                                 1.248398                                                    
+Iteração:                                             18                                                          
 
-Raiz:         1.603235            2.517835            1.248394                                                    
-Iteração:     19                  19                  19                                                          
+Raiz:                                                 1.248390                                                    
+Iteração:                                             19                                                          
 
-Raiz:         0.364052            2.320542            1.248392                                                    
-Iteração:     20                  20                  20                                                          
+Raiz:                                                 1.248394                                                    
+Iteração:                                             20                                                          
 
-Raiz:         1.591972            2.108919            1.248393                                                    
-Iteração:     21                  21                  21                                                          
+Raiz:                                                 1.248392                                                    
+Iteração:                                             21                                                          
 
-Raiz:         1.593929            1.883258            1.248393                                                    
-Iteração:     22                  22                  22                                                          
+Raiz:                                                 1.248393                                                    
+Iteração:                                             22                                                          
 
-Raiz:         0.371627            1.651038            1.248392                                                    
-Iteração:     23                  23                  23                                                          
+Raiz:                                                 1.248393                                                    
+Iteração:                                             23                                                          
 
-Raiz:         1.581308            1.438657            1.248392                                                    
-Iteração:     24                  24                  24                                                          
+Raiz:                                                 1.248392                                                    
+Iteração:                                             24                                                          
 
-Raiz:         1.583570            1.297400            1.248392                                                    
-Iteração:     25                  25                  25                                                          
+Raiz:                                                 1.248392                                                    
+Iteração:                                             25                                                          
 
-Raiz:         0.380354            1.251942                                                                        
-Iteração:     26                  26                                                                              
-
-Raiz:         1.569264            1.248411                                                                        
-Iteração:     27                  27                                                                              
-
-Raiz:         1.571924            1.248392                                                                        
-Iteração:     28                  28                                                                              
-
-Raiz:         0.390575                                                                                            
-Iteração:     29                                                                                                  
-
-Raiz:         1.555478                                                                                            
-Iteração:     30                                                                                                  
-
-Raiz:         1.558674                                                                                            
-Iteração:     31                                                                                                  
-
-Raiz:         0.402793                                                                                            
-Iteração:     32                                                                                                  
-
-Raiz:         1.539441                                                                                            
-Iteração:     33                                                                                                  
-
-Raiz:         1.543387                                                                                            
-Iteração:     34                                                                                                  
-
-Raiz:         0.417782                                                                                            
-Iteração:     35                                                                                                  
-
-Raiz:         1.520408                                                                                            
-Iteração:     36                                                                                                  
-
-Raiz:         1.525456                                                                                            
-Iteração:     37                                                                                                  
-
-Raiz:         0.436798                                                                                            
-Iteração:     38                                                                                                  
-
-Raiz:         1.497247                                                                                            
-Iteração:     39                                                                                                  
-
-Raiz:         1.504017                                                                                            
-Iteração:     40                                                                                                  
-
-Raiz:         0.462025                                                                                            
-Iteração:     41                                                                                                  
-
-Raiz:         1.468151                                                                                            
-Iteração:     42                                                                                                  
-
-Raiz:         1.477848                                                                                            
-Iteração:     43                                                                                                  
-
-Raiz:         0.497608                                                                                            
-Iteração:     44                                                                                                  
-
-Raiz:         1.430122                                                                                            
-Iteração:     45                                                                                                  
-
-Raiz:         1.445351                                                                                            
-Iteração:     46                                                                                                  
-
-Raiz:         0.552299                                                                                            
-Iteração:     47                                                                                                  
-
-Raiz:         1.378110                                                                                            
-Iteração:     48                                                                                                  
-
-Raiz:         1.405316                                                                                            
-Iteração:     49                                                                                                  
-
-Raiz:         0.646809                                                                                            
-Iteração:     50                                                                                                  
-
-Raiz:         1.305202                                                                                            
-Iteração:     51                                                                                                  
-
-Raiz:         1.361153                                                                                            
-Iteração:     52                                                                                                  
-
-Raiz:         0.830218                                                                                            
-Iteração:     53                                                                                                  
-
-Raiz:         1.220031                                                                                            
-Iteração:     54                                                                                                  
-
-Raiz:         1.321387                                                                                            
-Iteração:     55                                                                                                  
-
-Raiz:         1.126272                                                                                            
-Iteração:     56                                                                                                  
-
-Raiz:         1.221220                                                                                            
-Iteração:     57                                                                                                  
-
-Raiz:         1.257487                                                                                            
-Iteração:     58                                                                                                  
-
-Raiz:         1.247167                                                                                            
-Iteração:     59                                                                                                  
-
-Raiz:         1.248355                                                                                            
-Iteração:     60                                                                                                  
-
-Raiz:         1.248318                                                                                            
-Iteração:     61                                                                                                  
+Raiz:                                                 1.248392                                                    
+Iteração:                                             26                                                          
 

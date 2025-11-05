@@ -91,16 +91,16 @@ def secante(x0, x1, p, it, k=1):
     
     if(abs(FdeX(x1)) < p or abs(x1 - x0) < p  or k > it):
         with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
-            resultados["Secante"].append((x0, k))
-            arquivo.write(f"{'Secante':<15}{x0:<20f}{k:<15}\n")
+            resultados["Secante"].append((x1, k))
+            arquivo.write(f"{'Secante':<15}{x1:<20f}{k:<15}\n")
         return
     
     x2 = x1 - ((FdeX(x1)*(x1-x0)) / (FdeX(x1)-FdeX(x0)))
 
     if(abs(FdeX(x2)) < p or abs(x2 - x1) < p or k > it):
         with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
-            resultados["Secante"].append((x0, k))
-            arquivo.write(f"{'Secante':<15}{x0:<20f}{k:<15}\n")
+            resultados["Secante"].append((x2, k))
+            arquivo.write(f"{'Secante':<15}{x2:<20f}{k:<15}\n")
         return
     
     resultados["Secante"].append(((x1+x2)/2, k))    
@@ -110,9 +110,8 @@ def secante(x0, x1, p, it, k=1):
 
 def newton(x0, p, it):
     fx = FdeX(x0)
-    
+    k = 1
     if(abs(fx) > p):
-        k = 1
         fxlinha = dFdeX(x0)
 
         if (fxlinha == 0):
@@ -133,7 +132,7 @@ def newton(x0, p, it):
 
     else:
         raiz = x0
-        resultados["MIL"].append((raiz, k))
+        resultados["Newton"].append((raiz, k))
 
     with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
             arquivo.write(f"{'Newton':<15}{raiz:<20f}{k:<15}\n")
@@ -146,7 +145,7 @@ def bissecao(i , p, it):
     k = 0
     if(abs(i[1] - i[0]) < p):
         with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
-            resultados["Bissecao"].append((meio, k))
+            resultados["Bissecao"].append((i[1], k))
             arquivo.write(f"{'Bissecao':<15}{meio:<20f}{k:<15}\n")
         return
     
@@ -175,10 +174,10 @@ def Mil(x0, p, it, k=1):
             arquivo.write(f"{'MIL':<15}{x0:<20f}{k:<15}\n")
         return
     
-    if(FdeX(x0) == float('inf')):
+    if(math.isinf(FdeX(x0)) or math.isnan(FdeX(x0))):
         with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
-            resultados["MIL"].append(("Inf", k))
-            arquivo.write(f"{'MIL':<15}{'Inf':<20}{k:<15}\n")
+            resultados["MIL"].append(("Inf/nan", k))
+            arquivo.write(f"{'MIL':<15}{'Inf/nan':<20}{k:<15}\n")
         return
     
     xn = PdeX(x0)
@@ -205,14 +204,14 @@ def r_falsi(i, p1, p2, it):
 
         if(abs(i[0] - i[1]) < p1):
             with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
-                resultados["Regula Falsi"].append((i[1], k))
-                arquivo.write(f"{'Regula Falsi':<15}{i[1]:<20f}{k:<15}\n\n")
+                resultados["Regula Falsi"].append(((i[1]+i[0])/2, k))
+                arquivo.write(f"{'Regula Falsi':<15}{(i[1]+i[0])/2:<20f}{k:<15}\n\n")
             return 
 
         if(abs(FdeX(i[0])) < p2 or abs(FdeX(i[1])) < p2):
             with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
-                resultados["Regula Falsi"].append((i[0], k))
-                arquivo.write(f"{'Regula Falsi':<15}{i[0]:<20f}{k:<15}\n\n")
+                resultados["Regula Falsi"].append(((i[1]+i[0])/2, k))
+                arquivo.write(f"{'Regula Falsi':<15}{(i[1]+i[0])/2:<20f}{k:<15}\n\n")
             return 
 
         m = FdeX(i[0])
@@ -220,11 +219,11 @@ def r_falsi(i, p1, p2, it):
         
         if(abs(FdeX(x)) < p2 or k > it):
             with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
-                resultados["Regula Falsi"].append((i[x], k))
+                resultados["Regula Falsi"].append((x, k))
                 arquivo.write(f"{'Regula Falsi':<15}{x:<20f}{k:<15}\n\n")
             return
          
-        if(m*FdeX(x) > 0):
+        if(m*FdeX(x) < 0):
             i[0] = x
         else:
             i[1] = x
