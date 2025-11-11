@@ -1,4 +1,4 @@
-from metods import*
+from metodsCap02 import*
 
 def main():
     intervalo = [prmt[0], prmt[1]]
