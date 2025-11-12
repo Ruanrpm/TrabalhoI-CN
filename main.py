@@ -1,9 +1,9 @@
-from metodsCap02 import*
+from metods.metodsCap02 import*
 
 def main():
     intervalo = [prmt[0], prmt[1]]
 
-    with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
+    with open("arquivos/arq_escrita.txt", "a", encoding="utf-8") as arquivo:
         arquivo.write(f"{'Método':<15}{'Raiz Aproximada':<20}{'Iterações':<15}\n")
 
 

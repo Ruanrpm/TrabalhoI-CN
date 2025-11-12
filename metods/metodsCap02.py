@@ -13,7 +13,7 @@ def escrever_resultados():
     metodos = list(resultados.keys())
     max_iters = max(len(v) for v in resultados.values())
 
-    with open("arq_escrita.txt", "a", encoding="utf-8") as arq:
+    with open("arquivos/arq_escrita.txt", "a", encoding="utf-8") as arq:
         arq.write("Método:       " + "".join(f"{m:<20}" for m in metodos) + "\n")
 
         for i in range(max_iters):
@@ -37,7 +37,7 @@ def escrever_resultados():
 # Transforma a função do arquivo .txt em uma função que possa ser usada em PY
 
 def cria_funct():
-    with open("arq_leitura.txt", "r", encoding="utf-8") as arquivo:
+    with open("arquivos/arq_leitura.txt", "r", encoding="utf-8") as arquivo:
         linhas = [linha.strip() for linha in arquivo.readlines() if linha.strip()]
 
     functFdx = linhas[0]
@@ -83,13 +83,13 @@ FdeX, dFdeX, PdeX, prmt = cria_funct()
 
 def secante(x0, x1, p, it, k=1):
     if(abs(FdeX(x0)) < p):
-        with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo: 
+        with open("arquivos/arq_escrita.txt", "a", encoding="utf-8") as arquivo: 
             resultados["Secante"].append((x0, k))
             arquivo.write(f"{'Secante':<15}{x0:<20f}{k:<15}\n")
         return
     
     if(abs(FdeX(x1)) < p or abs(x1 - x0) < p  or k > it):
-        with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
+        with open("arquivos/arq_escrita.txt", "a", encoding="utf-8") as arquivo:
             resultados["Secante"].append((x1, k))
             arquivo.write(f"{'Secante':<15}{x1:<20f}{k:<15}\n")
         return
@@ -97,7 +97,7 @@ def secante(x0, x1, p, it, k=1):
     x2 = x1 - ((FdeX(x1)*(x1-x0)) / (FdeX(x1)-FdeX(x0)))
 
     if(abs(FdeX(x2)) < p or abs(x2 - x1) < p or k > it):
-        with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
+        with open("arquivos/arq_escrita.txt", "a", encoding="utf-8") as arquivo:
             resultados["Secante"].append((x2, k))
             arquivo.write(f"{'Secante':<15}{x2:<20f}{k:<15}\n")
         return
@@ -133,7 +133,7 @@ def newton(x0, p, it):
         raiz = x0
         resultados["Newton"].append((raiz, k))
 
-    with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
+    with open("arquivos/arq_escrita.txt", "a", encoding="utf-8") as arquivo:
             arquivo.write(f"{'Newton':<15}{raiz:<20f}{k:<15}\n")
 
 
@@ -143,7 +143,7 @@ def bissecao(i , p, it):
     meio = 0
     k = 0
     if(abs(i[1] - i[0]) < p):
-        with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
+        with open("arquivos/arq_escrita.txt", "a", encoding="utf-8") as arquivo:
             resultados["Bissecao"].append((i[1], k))
             arquivo.write(f"{'Bissecao':<15}{meio:<20f}{k:<15}\n")
         return
@@ -161,20 +161,20 @@ def bissecao(i , p, it):
         resultados["Bissecao"].append((meio, k))
 
 
-    with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
+    with open("arquivos/arq_escrita.txt", "a", encoding="utf-8") as arquivo:
         arquivo.write(f"{'Bissecao':<15}{meio:<20f}{k:<15}\n")
 
 # Metodo MIL
 
 def Mil(x0, p, it, k=1):
     if(abs(FdeX(x0)) < p):
-        with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
+        with open("arquivos/arq_escrita.txt", "a", encoding="utf-8") as arquivo:
             resultados["MIL"].append((x0, k))
             arquivo.write(f"{'MIL':<15}{x0:<20f}{k:<15}\n")
         return
     
     if(math.isinf(FdeX(x0)) or math.isnan(FdeX(x0))):
-        with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
+        with open("arquivos/arq_escrita.txt", "a", encoding="utf-8") as arquivo:
             resultados["MIL"].append(("Inf/nan", k))
             arquivo.write(f"{'MIL':<15}{'Inf/nan':<20}{k:<15}\n")
         return
@@ -182,12 +182,12 @@ def Mil(x0, p, it, k=1):
     xn = PdeX(x0)
 
     if(abs(FdeX(xn)) < p or abs(xn - x0) < p or k >= it):
-        with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
+        with open("arquivos/arq_escrita.txt", "a", encoding="utf-8") as arquivo:
             resultados["MIL"].append((xn, k))
             arquivo.write(f"{'MIL':<15}{xn:<20f}{k:<15}\n")
         return
     elif(FdeX(xn) == float('inf')):
-        with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
+        with open("arquivos/arq_escrita.txt", "a", encoding="utf-8") as arquivo:
             resultados["MIL"].append(('Inf', k))
             arquivo.write(f"{'MIL':<15}{'Inf':<20}{k:<15}\n")
         return
@@ -202,13 +202,13 @@ def r_falsi(i, p1, p2, it):
     while (True):
 
         if(abs(i[0] - i[1]) < p1):
-            with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
+            with open("arquivos/arq_escrita.txt", "a", encoding="utf-8") as arquivo:
                 resultados["Regula Falsi"].append(((i[1]+i[0])/2, k))
                 arquivo.write(f"{'Regula Falsi':<15}{(i[1]+i[0])/2:<20f}{k:<15}\n\n")
             return 
 
         if(abs(FdeX(i[0])) < p2 or abs(FdeX(i[1])) < p2):
-            with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
+            with open("arquivos/arq_escrita.txt", "a", encoding="utf-8") as arquivo:
                 resultados["Regula Falsi"].append(((i[1]+i[0])/2, k))
                 arquivo.write(f"{'Regula Falsi':<15}{(i[1]+i[0])/2:<20f}{k:<15}\n\n")
             return 
@@ -217,7 +217,7 @@ def r_falsi(i, p1, p2, it):
         x = (i[0]*FdeX(i[1]) - i[1]*m) / (FdeX(i[1]) - m)
         
         if(abs(FdeX(x)) < p2 or k > it):
-            with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
+            with open("arquivos/arq_escrita.txt", "a", encoding="utf-8") as arquivo:
                 resultados["Regula Falsi"].append((x, k))
                 arquivo.write(f"{'Regula Falsi':<15}{x:<20f}{k:<15}\n\n")
             return
@@ -228,7 +228,7 @@ def r_falsi(i, p1, p2, it):
             i[1] = x
 
         if(abs(i[1] - i[0]) < p1):
-            with open("arq_escrita.txt", "a", encoding="utf-8") as arquivo:
+            with open("arquivos/arq_escrita.txt", "a", encoding="utf-8") as arquivo:
                 resultados["Regula Falsi"].append(((i[1]+i[0])/2, k))
                 arquivo.write(f"{'Regula Falsi':<15}{((i[1]+i[0])/2):<20f}{k:<15}\n\n")
             return 
