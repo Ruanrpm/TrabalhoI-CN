@@ -52,7 +52,9 @@ def cria_funct():
                 "sin": math.sin,
                 "tan": math.tan,
                 "log": math.log,
-                "sqrt": math.sqrt
+                "sqrt": math.sqrt,
+                "e": math.e
+                
             })
         except OverflowError:
             return float('inf') 
