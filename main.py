@@ -1,8 +1,8 @@
-from methods.metodsCap02 import*
+from src.methods.methodsCap02 import*
 import tkinter as tk
-from view.telaInicial import CriarTelaInicial
-from view.cap2_tkt import criarTelaCap2
-from view.cap3_tkt import criarTelaCap3 
+from src.view.telaInicial import CriarTelaInicial
+from src.view.cap2_tkt import criarTelaCap2
+from src.view.cap3_tkt import criarTelaCap3 
 
 def mostrar_tela(frame):
     frame.tkraise()

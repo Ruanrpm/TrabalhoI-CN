@@ -189,3 +189,121 @@ Iteração:     60
 Raiz:         1.248392                                                                                            
 Iteração:     61                                                                                                  
 
+Secante        1.248392            61             
+Secante        1.248392            61             
+Newton         1.248392            30             
+Bissecao       1.248392            31             
+Secante        1.248392            61             
+Newton         1.248392            30             
+Bissecao       1.248392            31             
+MIL            Inf                 2              
+Regula Falsi   0.179886            101            
+
+Secante        1.248392            61             
+Newton         1.248392            30             
+MIL            Inf                 2              
+Regula Falsi   0.179862            1              
+
+Bissecao       1.248392            31             
+Secante        1.248392            9              
+Newton         1.248392            5              
+Bissecao       1.248392            31             
+MIL            Inf                 2              
+Bissecao       1.248392            31             
+MIL            Inf                 2              
+MIL            Inf                 2              
+MIL            Inf                 2              
+Regula Falsi   1.248392            25             
+
+MIL            Inf                 2              
+Regula Falsi   1.248392            25             
+
+MIL            Inf                 2              
+Regula Falsi   1.248392            25             
+
+MIL            Inf                 2              
+Regula Falsi   1.248392            25             
+
+Bissecao       1.248392            31             
+MIL            Inf                 2              
+Bissecao       1.248392            31             
+Newton         1.248392            5              
+Regula Falsi   1.248392            25             
+
+MIL            Inf                 2              
+Regula Falsi   1.248392            25             
+
+MIL            Inf                 2              
+Regula Falsi   0.001851            3              
+
+MIL            Inf                 2              
+Bissecao       1.248392            32             
+Newton         1.248392            30             
+Secante        0.003700            5              
+Regula Falsi   0.001851            3              
+
+Secante        0.003700            5              
+Newton         1.248392            30             
+Bissecao       1.248392            32             
+Regula Falsi   0.001851            3              
+
+Secante        0.003700            5              
+Regula Falsi   0.001851            3              
+
+Secante        0.003700            5              
+Newton         1.248392            30             
+Bissecao       1.248392            32             
+MIL            Inf                 2              
+Regula Falsi   0.001851            3              
+
+Secante        0.003700            5              
+Regula Falsi   0.001851            3              
+
+Secante        1.248392            9              
+Newton         1.248392            5              
+Bissecao       1.248392            31             
+MIL            Inf                 2              
+Regula Falsi   1.248392            25             
+
+MIL            Inf                 2              
+Bissecao       1.248392            31             
+Newton         1.248392            5              
+Secante        1.248392            9              
+Secante        1.248392            61             
+Newton         1.248392            30             
+Bissecao       1.248392            31             
+MIL            Inf                 2              
+Regula Falsi   0.179886            101            
+
+Regula Falsi   0.179886            101            
+
+Regula Falsi   0.179886            101            
+
+MIL            Inf                 2              
+Regula Falsi   0.179886            101            
+
+Regula Falsi   0.179886            101            
+
+MIL            Inf                 2              
+Bissecao       1.248392            31             
+Regula Falsi   0.179886            101            
+
+MIL            Inf                 2              
+Bissecao       1.248392            31             
+Newton         1.248392            30             
+Secante        1.248392            61             
+Regula Falsi   0.001851            3              
+
+MIL            Inf                 2              
+Bissecao       1.248392            32             
+Newton         1.248392            30             
+Secante        0.003700            5              
+MIL            Inf                 2              
+Bissecao       1.248392            32             
+Secante        0.003700            5              
+Secante        0.003700            5              
+Newton         1.248392            30             
+Bissecao       1.248392            32             
+MIL            Inf                 2              
+Regula Falsi   0.177745            101            
+
