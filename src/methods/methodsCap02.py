@@ -13,7 +13,7 @@ def escrever_resultados():
     metodos = list(resultados.keys())
     max_iters = max(len(v) for v in resultados.values())
 
-    with open("arquivos/arq_escrita.txt", "a", encoding="utf-8") as arq:
+    with open("src/arquivos/arq_escrita.txt", "a", encoding="utf-8") as arq:
         arq.write("Método:       " + "".join(f"{m:<20}" for m in metodos) + "\n")
 
         for i in range(max_iters):
@@ -52,6 +52,7 @@ def cria_funct():
                 "tan": math.tan,
                 "log": math.log,
                 "sqrt": math.sqrt,
+                "log10": math.log10,
                 "e": math.e
                 
             })
@@ -68,6 +69,7 @@ def cria_funct():
         "sin": sp.sin,
         "tan": sp.tan,
         "log": sp.log,
+        "log10": lambda x: sp.log(x, 10),
         "sqrt": sp.sqrt
     })
     d_FdeX = sp.diff(exprF, x)
@@ -116,7 +118,8 @@ def secante(x0, x1, p, it, k=1):
 
 # Metodo de Newton
 
-def newton(x0, p, it):
+def newton(x0, x1, p, it):
+    x0 = (x0 + x1) / 2 
     fx = FdeX(x0)
     k = 1
     if(abs(fx) > p):
