@@ -356,7 +356,7 @@ def criarTelaCap3(container, voltarTelaInicial):
                     texto += f"Critério de parada: erro < {tol:.2e}\n\n"
                     texto += f"Solução:\n{_formatar_vetor(x)}\n\n"
                     texto += f"Tempo de execução: {tempo*1000:.4f} ms\n"
-                    if mostrar_hist_var.get() and len(hist) <= 20:
+                    if mostrar_hist_var.get():
                         texto += "\nHistórico de iterações:\n"
                         for i, xi in enumerate(hist): texto += f"  Iteração {i+1}: {_formatar_vetor(xi, prec=4)}\n"
                 except ValueError as e:
@@ -387,7 +387,7 @@ def criarTelaCap3(container, voltarTelaInicial):
                     texto += f"Critério de parada: erro < {tol:.2e}\n\n"
                     texto += f"Solução:\n{_formatar_vetor(x)}\n\n"
                     texto += f"Tempo de execução: {tempo*1000:.4f} ms\n"
-                    if mostrar_hist_var.get() and len(hist) <= 20:
+                    if mostrar_hist_var.get():
                         texto += "\nHistórico de iterações:\n"
                         for i, xi in enumerate(hist): texto += f"  Iteração {i+1}: {_formatar_vetor(xi, prec=4)}\n"
                 except ValueError as e:
